@@ -1,0 +1,149 @@
+
+<!-- Uses a header that contracts as the page scrolls down. -->
+<html>
+  <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=0">
+    <!-- Material Design Lite -->
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+<img src="nikerun.jpg" border="0" class="bgimg" >
+<style>
+
+.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
+  padding-right: 0;
+}
+.bgimg {
+        width: 100%; position: fixed;top: 0;left: 0; height: 100%;
+       }
+#map {
+            height: 250px; width: auto
+        }
+        
+           .myButton {
+
+
+padding: 10px 20px 11px !important;
+font-size: 21px !important;
+background-color: #F2FFB2;
+font-weight: bold;
+text-shadow: 1px 1px #333;
+color: #333;
+border-radius: 100px;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border: 1px solid #333;
+cursor: pointer;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+
+	
+	h1 {
+	font-family: 'Rockwell Extra Bold', 'Rockwell Bold', monospace;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26px;
+}
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #FFE4E1), color-stop(1, #FF8C69));
+	background:-moz-linear-gradient(top, #FFE4E1 5%, #FF8C69 100%);
+	background:-webkit-linear-gradient(top, #FFE4E1 5%, #FF8C69 100%);
+	background:-o-linear-gradient(top, #FFE4E1 5%, #FF8C69 100%);
+	background:-ms-linear-gradient(top, #FFE4E1 5%, #FF8C69 100%);
+	background:linear-gradient(to bottom, #FFE4E1 5%, #FF8C69 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00FFFF', endColorstr='#FF8C69',GradientType=0);
+	background-color:#FFE4E1;
+}
+.myButton:active {
+	position:static;
+	top:1px;
+}
+        #speedDisplay {
+            font-size: 30px;
+            height: 30px;
+            text-align: center;
+            margin-top: 8px;
+        }
+        
+        #totalDistance,
+        #totalTime,
+        #averageSpeed {
+            float: left;
+            width: 33%;
+            text-align: center;
+        }
+</style>
+<body>
+<div class="demo-layout-waterfall mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--waterfall">
+    <!-- Top row, always visible -->
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <div class="mdl-layout-spacer"></div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+        <label class="mdl-button mdl-js-button mdl-button--icon"
+               for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="sample"
+                 id="waterfall-exp" />
+        </div>
+      </div>
+    </div>
+    <!-- Bottom row, not visible on scroll -->
+    <div class="mdl-layout__header-row">
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href=""></a>
+        <a class="mdl-navigation__link" href=""></a>
+        <a class="mdl-navigation__link" href=""></a>
+        <a class="mdl-navigation__link" href=""></a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Page</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="index.html">Index</a>
+      <a class="mdl-navigation__link" href="recordpage.html">RecordPage</a>
+      <a class="mdl-navigation__link" href="history.html">History</a>
+      
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here -->
+	<div align="center">
+	<h1>RECORD PAGE</h1>
+<div class="page-content">
+<div id="displaySpeed"></div>
+<div id="map"></div>
+<div id="controlledArea">
+<button id="runButton" class="myButton">START</button>
+<button id="saveButton" class="myButton">SAVE</button>
+<button id="stopButton" class="myButton">FINISH</button>
+
+</div>
+
+<div id="totalDistance"></div>
+<div id="totalTime"></div>
+<div id="meanspeed"></div>
+<div id="caloriesburnt"></div>
+
+<script type="text/javascript" src="recordfile.js"></script>
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=&amp;callback=initMap"></script>
+</div>
+	</div>
+  </main>
+</div>
+</body>
+</html>
